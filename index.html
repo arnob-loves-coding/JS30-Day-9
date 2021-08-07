@@ -5,6 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>day-9</title>
+    <style>
+      body {
+        display: grid;
+        width: 100%;
+        height: 100vh;
+        place-items: center;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h1>Fun Fun Console!</h1>
+    <script>
+      console.log("hello I am a string");
+      console.log("hello I am a %s string", "😉");
+      console.log(
+        "%c hello I am a  string",
+        "font-size: 100px;background:red;color:purple"
+      );
+      console.warn("oh noo!");
+      console.error("Here we go again!");
+      console.info("I am trying to make my day productive as much as I can");
+      console.assert(1 === 3, "that is wrong bro");
+      // console.clear();
+      const arrayOfObject = [
+        { person: "arnob", age: 23 },
+        { person: "animesh", age: 21 },
+        { person: "anupom", age: 22 },
+      ];
+      arrayOfObject.forEach((each) => {
+        console.groupCollapsed(`${each.person}`);
+        console.log(`this is my name: ${each.person}`);
+        console.log(`this is my age: ${each.age}`);
+        console.groupEnd(`${each.person}`);
+      });
+      console.count("arnob");
+      console.count("arnob");
+      console.count("arnob");
+      console.count("animesh");
+      console.count("arnob");
+      console.count("arnob");
+      console.count("arnob");
+      console.count("arnob");
+      console.table(arrayOfObject);
+      console.time("doing something");
+      fetch("https://api.github.com/users/wesbos").then((data) =>
+        data.json().then((data) => {
+          console.log(data);
+          console.timeEnd("doing something");
+        })
+      );
+    </script>
+  </body>
 </html>
